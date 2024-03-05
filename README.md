@@ -1,3 +1,6 @@
+# Screenshot
+![mildflix screenshot](https://github.com/firdanmildani/movies-series-info/assets/71616305/4c9cc972-bde5-4cb8-92b6-5c3fa7400647)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
