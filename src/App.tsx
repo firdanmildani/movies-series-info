@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/style.css'
+import CardContainer from "./components/CardContainer";
+import Header from "./components/Header";
+import { apiKey, trending, popular } from "./modules/Api";
+import Hero from './components/Hero';
+
+const itemsProps = {
+  numberOfMovies:12,
+  moviesOn:true,
+  tvSeriesOn:false,
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <Hero 
+      apiEndpoint={`${trending}?api_key=${apiKey}`}
+      numberOfMovies={1}
+      />
+      <CardContainer 
+      {...itemsProps}
+      apiEndpoint={`${trending}?api_key=${apiKey}`}
+      containerHeading={"Trending Movies"}
+      />
+
+      <CardContainer 
+      {...itemsProps} 
+      apiEndpoint={`${popular}?api_key=${apiKey}`}
+      containerHeading={"Popular Movies"}
+      />
     </div>
   );
 }
